@@ -29,7 +29,11 @@ import java.util.Map;
  * able of calling ".get(index)" on an JSONObject for example... it should then
  * notify the user by a simple text message to the console.
  * 
- * @author ksango
+ * This library started from the JSONObject and JSONArray classes by Douglas
+ * Crockford, since then it has been heavily modified and also includes changes
+ * from the JSONArray and JSONObject classes from Processing core.
+ * 
+ * @author Andreas Goransson
  * 
  */
 public class JSON {
@@ -143,9 +147,9 @@ public class JSON {
 	/**
 	 * Open a json file
 	 * 
-	 * @param json
+	 * @param json filename
 	 * 
-	 * @return
+	 * @return JSON (array or object)
 	 */
 	public static JSON load(String filename) {
 		InputStream input = null;
@@ -171,6 +175,13 @@ public class JSON {
 		throw new RuntimeException("File is not JSON formatted");
 	}
 	
+	/**
+	 * Parse a JSON string
+	 * 
+	 * @param data json formatted string
+	 * 
+	 * @return JSON (array or object)
+	 */
 	public static JSON parse(String data){	
 		JSONTokener tokener = new JSONTokener(data);
 		

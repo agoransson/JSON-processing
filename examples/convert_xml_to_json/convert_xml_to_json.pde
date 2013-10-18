@@ -21,7 +21,7 @@ PFont font;
 void setup() {
   size(600, 360);
   
-  font = createFont("Merriweather-Light.ttf", 28);
+  font = createFont("Merriweather-Light.vlw", 28);
   textFont(font);
 
   // The URL for the XML document
@@ -52,7 +52,6 @@ void draw() {
 
   // Display all the stuff we want to display
   text("Zip code: " + zip, width*0.15, height*0.33);
-  text("Today’s high: " + temperature, width*0.15, height*0.5);
+  text("Todays high: " + temperature, width*0.15, height*0.5);
   text("Forecast: " + weather, width*0.15, height*0.66);
-
 }
