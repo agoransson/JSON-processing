@@ -8,7 +8,7 @@ Since the beta release (8) of Processing 2.0 (February 24) JSON is part of the c
 
 # Installation in Processing
 
-1. Download the latest version [here](http://santiclaws.se/json4processing/json4processing-0.1.7.zip)
+1. Download the latest (0.1.8) version [here](http://santiclaws.se/json4processing/json4processing-0.1.8.zip)
 2. Extract the zip-file into your /sketchbook/libraries/ folder.
 3. Restart Processing IDE
 
@@ -75,6 +75,29 @@ println(arr);
 ```
 
 **Creating a JSON array of objects**
+
+``` java
+/**
+ * Creating a JSON array of objects
+ */
+JSON first = JSON.createObject();
+first.setInt("val", 5);
+
+JSON sec = JSON.createObject();
+sec.setFloat("val", 5.5);
+
+JSON third = JSON.createObject();
+third.setString("val", "a");
+
+JSON arr = JSON.createArray();
+arr.append(first);
+arr.append(sec);
+arr.append(third);
+
+println(arr);
+```
+
+**Parson JSON from websource**
 
 ``` java
 /**
